@@ -128,11 +128,11 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Keymap 3: Gaming Layer
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |   ~    |   1  |   2  |   3  |   4  |   5  | FN29 |           |  NO  |  NO  |  NO  |  NO  |  NO  |  NO  |   NO   |
+     * | Esc    |   1  |   2  |   3  |   4  |   5  | FN29 |           |  NO  |  NO  |  NO  |  NO  |  NO  |  NO  |   NO   |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * | Tab    |   Q  |   E  |   W  |   R  |   T  |   Y  |           |  NO  |  NO  |  F6  |  F7  |  F8  |  F9  |   NO   |
+     * | Tab    |   Q  |   W  |   E  |   R  |   T  |   Y  |           |  NO  |  NO  |  F6  |  F7  |  F8  |  F9  |   NO   |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * | LShift |   F  |   A  |   S  |   D  |   G  |------|           |------|  NO  |  F10 |  F11 |  F12 |  F13 |   NO   |
+     * | Enter  |   A  |   D  |   D  |   F  |   G  |------|           |------|  NO  |  F10 |  F11 |  F12 |  F13 |   NO   |
      * |--------+------+------+------+------+------|   N  |           |  NO  |------+------+------+------+------+--------|
      * | LCtrl  |   Z  |   X  |   C  |   V  |   B  |      |           |      |  NO  |  F14 |  F15 |  F16 |  F17 |   NO   |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -142,26 +142,26 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                        |  FN3 |  FN4 |       |  NO  |  NO  |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |  FN5 |       |  NO  |      |      |
-     *                                 |  FN2 |  SPC |------|       |------|  NO  |  NO  |
+     *                                 | LSFT |  SPC |------|       |------|  NO  |  NO  |
      *                                 |      |      |  FN6 |       |  NO  |      |      |
      *                                 `--------------------'       `--------------------'
      */
      KEYMAP(  // layout: layer 3: F-keys only
         // left hand
-        GRV, 1, 2, 3, 4, 5, TRNS,
-        ESC, Q, E, W, R, T, Y,
-        TAB, F, A, S, D, G,
-        LSFT, Z, X, C, V, B, N,
-        F5, F4, F3, F2, F1,
+        ESC,  1, 2, 3, 4, 5, TRNS,
+        TAB,  Q, W, E, R, T, Y,
+        ENT,  A, S, D, F, G,
+        LCTL, Z, X, C, V, B, N,
+              F5, F4, F3, F2, F1,
 
                             FN3,FN4,
                                 FN5,
-                        FN2,SPC,FN6,
+                       LSFT,SPC,FN6,
         // right hand
              NO,  NO,  NO,  NO,  NO,  NO,  NO,
              NO,  NO,  F6,  F7,  F8,  F9,  NO,
-                  NO,  F10,  F11,  F12,  F13,  NO,
-             NO,  NO,  F14,  F15, F16, F17, NO,
+                  NO,  F10,  F11,  F12,  U,  NO,
+             NO,  NO,  I,  O, P, K, NO,
                        NO,NO,NO,NO,NO,
         NO,NO,
         NO,
@@ -289,10 +289,10 @@ static const uint16_t PROGMEM fn_actions[] = {
 static const uint16_t PROGMEM fn_actions_3[] = {
     [1] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_SPC),
     [2] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_H),
-    [3] = ACTION_MODS_KEY(MOD_LCTL, KC_Q),
-    [4] = ACTION_MODS_KEY(MOD_LCTL, KC_E),
-    [5] = ACTION_MODS_KEY(MOD_LCTL, KC_R),
-    [6] = ACTION_MODS_KEY(MOD_LCTL, KC_T),
+    [3] = ACTION_MODS_KEY(MOD_RCTL, KC_Q),
+    [4] = ACTION_MODS_KEY(MOD_RCTL, KC_E),
+    [5] = ACTION_MODS_KEY(MOD_RCTL, KC_R),
+    [6] = ACTION_MODS_KEY(MOD_RCTL, KC_T),
 };
 
 #define FN_ACTIONS_SIZE     (sizeof(fn_actions)   / sizeof(fn_actions[0]))
